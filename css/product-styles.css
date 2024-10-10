@@ -6,9 +6,15 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f7fa;
+    font-family: 'Lora', 'Poppins', sans-serif;
+    background-color: #d3cc92;
     color: #333;
+    background-image: url('../images/background.jpg'); /* Ensure the path to the image is correct */
+    background-size: cover; /* Make sure the image covers the entire screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Make the background stay fixed when scrolling */
+
 }
 
 /* Navigation Bar */
@@ -105,9 +111,10 @@ body {
     position: sticky;
     top: 40px;
     padding: 40px;
-    background-color: #fff;
+    background-color: #fae9cd;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
 }
 
 .product-details h1 {
@@ -181,5 +188,11 @@ body {
     .product-details {
         max-width: 100%;
         position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* This ensures the image scales down on smaller screens */
     }
 }
