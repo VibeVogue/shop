@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Product 1</title>
+    <link rel="stylesheet" href="css/product-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        function changeImage(index) {
+            // Get all images and thumbnails
+            const images = document.querySelectorAll('.image-slider img');
+            const thumbnails = document.querySelectorAll('.thumbnail-row .thumbnail');
+    
+            // Remove 'active' class from all images and thumbnails
+            images.forEach((img) => img.classList.remove('active'));
+            thumbnails.forEach((thumb) => thumb.classList.remove('active'));
+    
+            // Add 'active' class to the selected image and corresponding thumbnail
+            document.getElementById(`main-image-${index}`).classList.add('active');
+            thumbnails[index - 1].classList.add('active');
+        }
+    </script>
+    
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">YOO_SIAN</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://www.instagram.com/yoo_sian_/">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Product Section -->
+    <div class="product-container">
+        <!-- Image Column with Slider -->
+        <div class="product-image-column">
+            <div class="image-slider">
+                <img id="main-image-1" src="images/p6/img2.jpeg" alt="Product 1 Image 1" class="active">
+                <img id="main-image-2" src="images/p6/img3.jpeg" alt="Product 1 Image 2">
+                <img id="main-image-3" src="images/p6/img6.jpeg" alt="Product 1 Image 3">
+                <img id="main-image-4" src="images/p6/img5.jpeg" alt="Product 1 Image 4">
+            </div>
+            <div class="thumbnail-row">
+                <img src="images/p6/img2.jpeg" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(1)">
+                <img src="images/p6/img3.jpeg" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(2)">
+                <img src="images/p6/img6.jpeg" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(3)">
+                <img src="images/p6/img5.jpeg" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(4)">
+            </div>
+        </div>
+        
+
+        <!-- Sticky Product Details Section -->
+        <div class="product-details">
+            <h1>High Waist Denim Shorts</h1>
+            <p>Vintage High Waist Denim Shorts Women Y2K High Street Fashion Light Blue Short Jeans Summer All Match Distressed Straight Shorts</p>
+            <ul class="product-features">
+                <li>Release Date: Summer 2024</li>
+                <li>Fabric Type: Denim</li>
+                <li>Season: Spring/Summer</li>
+                <li>Age: Junior</li>
+            </ul>
+            <div class="price">$14.41</div>
+            <p>Order from AliExpress</p>
+            <a href="https://s.click.aliexpress.com/e/_oDnfsRx" class="buy-button" target="_blank">Order Now</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 VibeVogue. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
