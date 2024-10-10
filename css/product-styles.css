@@ -193,6 +193,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        background-size: contain; /* This ensures the image scales down on smaller screens */
+        background-attachment: scroll; /* Allow scrolling on mobile */
+        background-position: top; /* Change position if needed */
     }
 }
