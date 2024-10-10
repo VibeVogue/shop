@@ -9,10 +9,10 @@ body {
     font-family:'Poppins', sans-serif;
     background-color: #f5f5f5;
     background-image: url('../images/background.jpg'); /* Ensure the path to the image is correct */
-    background-size: cover; /* Make sure the image covers the entire screen */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-attachment: fixed; /* Make the background stay fixed when scrolling */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* No repeating */
+    background-attachment: fixed; /* Fixed background */
 }
 
 .container {
@@ -99,7 +99,8 @@ h1 {
 }
 @media (max-width: 768px) {
     body {
-        background-size: contain; /* This ensures the image scales down on smaller screens */
+        background-attachment: scroll; /* Allow scrolling on mobile */
+        background-position: top; /* Change position if needed */
     }
 }
 
