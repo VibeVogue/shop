@@ -6,29 +6,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Product 1</title>
     <link rel="stylesheet" href="css/product-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+        function changeImage(index) {
+            // Get all images and thumbnails
+            const images = document.querySelectorAll('.image-slider img');
+            const thumbnails = document.querySelectorAll('.thumbnail-row .thumbnail');
+    
+            // Remove 'active' class from all images and thumbnails
+            images.forEach((img) => img.classList.remove('active'));
+            thumbnails.forEach((thumb) => thumb.classList.remove('active'));
+    
+            // Add 'active' class to the selected image and corresponding thumbnail
+            document.getElementById(`main-image-${index}`).classList.add('active');
+            thumbnails[index - 1].classList.add('active');
+        }
+    </script>
+    
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">BrandName</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Product Section -->
     <div class="product-container">
-        <!-- Scrollable Image Column -->
+        <!-- Image Column with Slider -->
         <div class="product-image-column">
-            <div class="image-list">
-                <img src="images/product1.jpg" alt="Product 1 Image 1">
-                <img src="images/product2.jpg" alt="Product 1 Image 2">
-                <img src="images/product3.jpg" alt="Product 1 Image 3">
-                <img src="images/product4.jpg" alt="Product 1 Image 4">
-                <!-- Add more images as needed -->
+            <div class="image-slider">
+                <img id="main-image-1" src="images/p1/product1.jpg" alt="Product 1 Image 1" class="active">
+                <img id="main-image-2" src="images/p1/product2.jpg" alt="Product 1 Image 2">
+                <img id="main-image-3" src="images/p1/product3.jpg" alt="Product 1 Image 3">
+                <img id="main-image-4" src="images/p1/product4.jpg" alt="Product 1 Image 4">
+            </div>
+            <div class="thumbnail-row">
+                <img src="images/p1/product1.jpg" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(1)">
+                <img src="images/p1/product2.jpg" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(2)">
+                <img src="images/p1/product3.jpg" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(3)">
+                <img src="images/p1/product4.jpg" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(4)">
             </div>
         </div>
+        
 
         <!-- Sticky Product Details Section -->
         <div class="product-details">
             <h1>Product 1 Title</h1>
-            <p>This is a short description of the product highlighting its features and benefits. It could include details like material, color options, and any special features.</p>
+            <p>This premium product features top-quality materials, available in various colors, offering durability and style.</p>
+            <ul class="product-features">
+                <li>Feature 1: Waterproof Material</li>
+                <li>Feature 2: Separate Laptop Compartment</li>
+                <li>Feature 3: Vacuum Compression</li>
+                <li>Feature 4: Anti-Theft Pocket</li>
+            </ul>
             <div class="price">$49.99</div>
             <a href="https://www.affiliate-link.com" class="buy-button" target="_blank">Buy Now</a>
         </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 BrandName. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
